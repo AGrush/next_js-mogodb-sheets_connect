@@ -12,6 +12,10 @@ export default function Top({ posts }) {
     const oneLang = onePost.querySelectorAll('textarea')[areaNumber];
     oneLang.select();
     document.execCommand('copy');
+    
+    oneLang.value = 'COPIED';
+    oneLang.style.fontSize = "30px";
+    oneLang.style.textAlign = "center";
   };
 
   var allPosts = posts.map((post, index) => {
@@ -24,25 +28,24 @@ export default function Top({ posts }) {
     return (
       <div className={post.title} key={post._id}>
         <h2>{formattedDate}</h2>
-        <h2>{index}</h2>
 
         <div className={"wrapper index_" + index}>
           <div className="one en">
             <h3>Eng</h3>
             <button onClick={() => {copyToClipboard(index, 0)}}>COPY</button>
-            <textarea value={englishHtml} readOnly></textarea>
+            <textarea value={englishHtml.toString()} readOnly></textarea>
           </div>
 
           <div className="one fr">
             <h3>Fr</h3>
             <button onClick={() => {copyToClipboard(index, 1)}}>COPY</button> 
-            <textarea value={frenchHtml} readOnly></textarea>
+            <textarea value={frenchHtml.toString()} readOnly></textarea>
           </div>
 
           <div className="one de">
             <h3>De</h3>
             <button onClick={() => {copyToClipboard(index, 2)}}>COPY</button>
-            <textarea value={germanHtml} readOnly></textarea>
+            <textarea value={germanHtml.toString()} readOnly></textarea>
           </div>
         </div>
 
