@@ -118,7 +118,7 @@ export async function getStaticProps() {
     .collection("posts")
     .find({})
     .sort({ date: -1 })
-    .limit(5)
+    .limit(3)
     .toArray();
   return {
     props: {
