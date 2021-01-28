@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { connectToDatabase } from "../util/mongodb";
 
-export default function Top({ posts }) {
+export default function Delivery({ posts }) {
   //const [count, setCount] = useState(1);
   const wrapperRef = useRef(null);
 
@@ -112,7 +112,7 @@ export default function Top({ posts }) {
     </div>
   );
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { db } = await connectToDatabase();
   const posts = await db
     .collection("posts")
