@@ -12,10 +12,16 @@ export default function Delivery({ posts }) {
     const oneLang = onePost.querySelectorAll('textarea')[areaNumber];
     oneLang.select();
     document.execCommand('copy');
-    
-    oneLang.value = 'COPIED';
-    oneLang.style.fontSize = "30px";
-    oneLang.style.textAlign = "center";
+
+    oneLang.value = '';
+    oneLang.style.backgroundImage = "url('https://i.ibb.co/ZVPCHfw/cat.png')";
+    oneLang.style.backgroundSize =  "80%"
+    oneLang.style.backgroundPosition =  "50%"
+    oneLang.style.backgroundRepeat =  "no-repeat"
+
+    //oneLang.style.fontSize = "30px";
+    //oneLang.style.textAlign = "center";
+
   };
 
   var allPosts = posts.map((post, index) => {
