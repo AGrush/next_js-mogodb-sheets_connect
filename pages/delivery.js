@@ -30,6 +30,7 @@ export default function Delivery({ posts }) {
     var englishHtml = post.en1 + post.en2 + post.en3 + post.en4 + post.en5;
     var frenchHtml = post.fr1 + post.fr2 + post.fr3 + post.fr4 + post.fr5;
     var germanHtml = post.de1 + post.de2 + post.de3 + post.de4 + post.de5;
+    var italianHtml = post.it1 + post.it2 + post.it3 + post.it4 + post.it5;
 
     return (
       <div className={post.title} key={post._id}>
@@ -53,8 +54,15 @@ export default function Delivery({ posts }) {
             <button onClick={() => {copyToClipboard(index, 2)}}>COPY</button>
             <textarea value={germanHtml.toString()} readOnly></textarea>
           </div>
-        </div>
 
+
+          <div className="one it">
+            <h3>It</h3>
+            <button onClick={() => {copyToClipboard(index, 3)}}>COPY</button>
+            <textarea value={italianHtml.toString()} readOnly></textarea>
+          </div>
+
+        </div>
       </div>
     )
   })
